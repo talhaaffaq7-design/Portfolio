@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Muhammad Talha Affaq | Front-End Web Developer</title>
+
+  <meta
+    name="description"
+    content="Muhammad Talha Affaq is a Front-End Web Developer focused on modern, responsive and premium website experiences."
+  />
+
+  <meta
+    name="keywords"
+    content="Muhammad Talha Affaq, Front-End Developer, Web Developer, HTML, CSS, JavaScript, Python, Responsive Web Design"
+  />
+
+  <meta name="author" content="Muhammad Talha Affaq" />
+
+  <meta property="og:title" content="Muhammad Talha Affaq | Front-End Web Developer" />
+  <meta
+    property="og:description"
+    content="Modern, responsive and professional websites built with attention to detail."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #07070c;
+      --bg2: #0d0d15;
+      --card: rgba(255,255,255,0.045);
+      --card-hover: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.09);
+      --text: #f7f7fb;
+      --muted: #a7a7b5;
+      --red: #ff4d6d;
+      --purple: #8b5cf6;
+      --pink: #ff3d81;
+      --green: #35e0a1;
+      --shadow: 0 25px 80px rgba(0,0,0,.4);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      background: var(--bg);
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(139,92,246,.13), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(255,77,109,.10), transparent 28%),
+        linear-gradient(180deg, #07070c 0%, #090911 45%, #07070c 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(var(--max), calc(100% - 30px));
+      z-index: 999;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(8,8,14,.72);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 15px 50px rgba(0,0,0,.25);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 35px;
+      height: 35px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--red), var(--purple));
+      box-shadow: 0 8px 25px rgba(255,77,109,.25);
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      color: #b9b9c5;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 12px;
+      border-radius: 10px;
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+      background: rgba(255,255,255,.06);
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--red), var(--pink));
+      color: white !important;
+      box-shadow: 0 8px 25px rgba(255,77,109,.2);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 160px 0 90px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid rgba(53,224,161,.18);
+      border-radius: 999px;
+      background: rgba(53,224,161,.06);
+      color: #8cf0c9;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .availability-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(53,224,161,.8);
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(48px, 7vw, 86px);
+      line-height: .98;
+      letter-spacing: -4px;
+      max-width: 850px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(
+        90deg,
+        #fff 0%,
+        #ff7891 45%,
+        #a78bfa 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      max-width: 670px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 19px;
+      border-radius: 13px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s ease;
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red), var(--pink));
+      border-color: transparent;
+      box-shadow: 0 15px 35px rgba(255,77,109,.2);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.04);
+      color: #dddde5;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.15);
+    }
+
+    /* =========================
+       PROFILE CARD
+    ========================= */
+
+    .profile-card {
+      position: relative;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(139,92,246,.18);
+      filter: blur(50px);
+      top: -60px;
+      right: -50px;
+    }
+
+    .profile-photo {
+      position: relative;
+      width: 125px;
+      height: 125px;
+      border-radius: 32px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      background:
+        linear-gradient(135deg, rgba(255,77,109,.95), rgba(139,92,246,.95));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+      overflow: hidden;
+    }
+
+    .profile-photo span {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    /*
+      FUTURE PROFILE PHOTO:
+      Jab tum apni photo bhejo ge,
+      TA ki jagah image yahan add kar denge.
+    */
+
+    .profile-card h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 25px;
+      margin-bottom: 4px;
+    }
+
+    .profile-role {
+      color: #b5b5c1;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .profile-points {
+      display: grid;
+      gap: 11px;
+    }
+
+    .profile-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #c8c8d2;
+      font-size: 13px;
+    }
+
+    .point-icon {
+      width: 27px;
+      height: 27px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: rgba(255,255,255,.055);
+      color: #ff7891;
+      font-size: 12px;
+    }
+
+    /* =========================
+       TECH STRIP
+    ========================= */
+
+    .tech-strip {
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.018);
+      overflow: hidden;
+    }
+
+    .tech-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech {
+      padding: 9px 15px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.025);
+      color: #bdbdc8;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      color: #ff7891;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(34px, 5vw, 52px);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .section-heading p {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: .35s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      background: var(--card-hover);
+      border-color: rgba(255,255,255,.14);
+      box-shadow: var(--shadow);
+    }
+
+    .project-preview {
+      height: 245px;
+      padding: 17px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,77,109,.16), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(139,92,246,.18), transparent 32%),
+        #0b0b12;
+    }
+
+    .browser {
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 15px;
+      overflow: hidden;
+      background: #101018;
+      box-shadow: 0 18px 40px rgba(0,0,0,.3);
+    }
+
+    .browser-top {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 11px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      background: #171720;
+    }
+
+    .browser-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #777;
+    }
+
+    .browser-address {
+      height: 15px;
+      flex: 1;
+      max-width: 180px;
+      margin-left: 8px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .preview-body {
+      padding: 22px;
+      height: calc(100% - 30px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .preview-label {
+      color: #8e8e9c;
+      font-size: 8px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .preview-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 23px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .preview-line {
+      width: 65%;
+      height: 6px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--red), var(--purple));
+      margin-bottom: 7px;
+    }
+
+    .preview-line.small {
+      width: 42%;
+      opacity: .5;
+    }
+
+    .project-content {
+      padding: 24px;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    .project-number {
+      color: #70707c;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .project-content h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 23px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 9px 0 17px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 6px 9px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.045);
+      color: #a9a9b4;
+      font-size: 10px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,.055);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .project-link span {
+      color: #ff708a;
+      transition: .25s ease;
+    }
+
+    .project-link:hover span {
+      transform: translateX(4px);
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--card);
+      transition: .3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,.14);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(
+        135deg,
+        rgba(255,77,109,.18),
+        rgba(139,92,246,.18)
+      );
+      border: 1px solid rgba(255,255,255,.07);
+      margin-bottom: 19px;
+      color: #ff7891;
+      font-weight: 800;
+    }
+
+    .service h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 18px;
+      margin-bottom: 9px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 40px;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .about-text + .about-text {
+      margin-top: 18px;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-box {
+      padding: 25px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 20px;
+    }
+
+    .skill-box h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 17px;
+      margin-bottom: 16px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill {
+      padding: 8px 10px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 9px;
+      color: #bdbdc8;
+      font-size: 11px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+      position: relative;
+      padding: 55px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255,77,109,.14), transparent 30%),
+        radial-gradient(circle at 90% 100%, rgba(139,92,246,.14), transparent 30%),
+        rgba(255,255,255,.035);
+    }
+
+    .contact-box h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(35px, 5vw, 58px);
+      letter-spacing: -2px;
+      line-height: 1;
+      max-width: 720px;
+      margin-bottom: 16px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 27px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.045);
+      font-size: 12px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.16);
+    }
+
+    .social-icon {
+      width: 23px;
+      height: 23px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: rgba(255,255,255,.08);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0 45px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: #777784;
+      font-size: 11px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-links a {
+      color: #888894;
+      font-size: 11px;
+      transition: .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    /* =========================
+       BACK TO TOP
+       LEFT SIDE
+    ========================= */
+
+    .back-top {
+      position: fixed;
+      left: 22px;
+      right: auto;
+      bottom: 22px;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      background: rgba(15,15,24,.82);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      transition: .25s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+    }
+
+    .back-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,77,109,.55);
+      box-shadow: 0 12px 30px rgba(0,0,0,.3);
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 135px;
+      }
+
+      .profile-card {
+        max-width: 620px;
+      }
+
+      .services-grid,
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+    }
+
+    @media (max-width: 720px) {
+
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .navbar {
+        top: 10px;
+        width: calc(100% - 20px);
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        padding: 10px;
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(8,8,14,.95);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        backdrop-filter: blur(20px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: .25s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        text-align: center;
+        padding: 12px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding: 125px 0 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(43px, 14vw, 65px);
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading p {
+        margin-top: 17px;
+      }
+
+      .projects-grid,
+      .services-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-preview {
+        height: 220px;
+      }
+
+      .contact-box {
+        padding: 32px 23px;
+      }
+
+      .contact-box h2 {
+        font-size: 38px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .back-top {
+        left: 15px;
+        bottom: 15px;
+        width: 43px;
+        height: 43px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <header class="navbar">
+    <div class="nav-inner">
+
+      <a href="#home" class="logo">
+        <span class="logo-mark">TA</span>
+        <span>Talha Affaq</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <main id="home">
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div class="reveal">
+
+            <div class="availability">
+              <span class="availability-dot"></span>
+              Open to Web Development Opportunities
+            </div>
+
+            <h1>
+              Front-End
+              <span>Web Developer.</span>
+            </h1>
+
+            <p class="hero-description">
+              I build modern, responsive and visually polished websites
+              with a strong focus on clean UI, responsive layouts and
+              smooth user experiences.
+            </p>
+
+            <div class="hero-buttons">
+
+              <a href="#work" class="btn btn-primary">
+                View My Work
+                <span>↗</span>
+              </a>
+
+              <a href="#contact" class="btn btn-secondary">
+                Let's Connect
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROFILE -->
+
+          <div class="profile-card reveal">
+
+           <div class="profile-photo">
+  <img src="profile.jpg" alt="Muhammad Talha Affaq">
+</div>
+
+            <h2>Muhammad Talha Affaq</h2>
+
+            <div class="profile-role">
+              Front-End Web Developer
+            </div>
+
+            <div class="profile-points">
+
+              <div class="profile-point">
+                <span class="point-icon">✓</span>
+                Modern & Responsive Websites
+              </div>
+
+              <div class="profile-point">
+                <span class="point-icon">✓</span>
+                Clean UI & Layout Design
+              </div>
+
+              <div class="profile-point">
+                <span class="point-icon">✓</span>
+                HTML • CSS • JavaScript • Python
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         TECHNOLOGIES
+    ========================= -->
+
+    <div class="tech-strip">
+      <div class="container">
+
+        <div class="tech-row">
+
+          <span class="tech">HTML5</span>
+          <span class="tech">CSS3</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">Python</span>
+          <span class="tech">Responsive Design</span>
+          <span class="tech">Modern UI</span>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="work">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+            <div class="eyebrow">Selected Work</div>
+            <h2>Projects I've Built</h2>
+          </div>
+
+          <p>
+            A collection of responsive websites created to explore
+            different industries, layouts and modern web experiences.
+          </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+          <!-- PROJECT 01 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-preview">
+
+              <div class="browser">
+
+                <div class="browser-top">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-address"></span>
+                </div>
+
+                <div class="preview-body">
+
+                  <div class="preview-label">
+                    Automotive
+                  </div>
+
+                  <div class="preview-title">
+                    Prime Autos
+                  </div>
+
+                  <div class="preview-line"></div>
+                  <div class="preview-line small"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+                <h3>Prime Autos</h3>
+                <span class="project-number">01</span>
+              </div>
+
+              <p>
+                A modern automotive website focused on premium
+                presentation, clear sections and responsive design.
+              </p>
+
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+
+              <a
+                href="https://primeautos7.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                View Live Website <span>→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 02 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-preview">
+
+              <div class="browser">
+
+                <div class="browser-top">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-address"></span>
+                </div>
+
+                <div class="preview-body">
+
+                  <div class="preview-label">
+                    Business
+                  </div>
+
+                  <div class="preview-title">
+                    Prime Elite
+                  </div>
+
+                  <div class="preview-line"></div>
+                  <div class="preview-line small"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+                <h3>Prime Elite Business</h3>
+                <span class="project-number">02</span>
+              </div>
+
+              <p>
+                A professional business website designed with
+                strong visual hierarchy and polished presentation.
+              </p>
+
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">UI Design</span>
+              </div>
+
+              <a
+                href="https://primeelitebusiness.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                View Live Website <span>→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 03 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-preview">
+
+              <div class="browser">
+
+                <div class="browser-top">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-address"></span>
+                </div>
+
+                <div class="preview-body">
+
+                  <div class="preview-label">
+                    Fitness
+                  </div>
+
+                  <div class="preview-title">
+                    No Excuse Gym
+                  </div>
+
+                  <div class="preview-line"></div>
+                  <div class="preview-line small"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+                <h3>No Excuse Gym</h3>
+                <span class="project-number">03</span>
+              </div>
+
+              <p>
+                A bold fitness-focused website with energetic
+                sections, strong typography and responsive layouts.
+              </p>
+
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+
+              <a
+                href="https://noexcusegym.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                View Live Website <span>→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 04 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-preview">
+
+              <div class="browser">
+
+                <div class="browser-top">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-address"></span>
+                </div>
+
+                <div class="preview-body">
+
+                  <div class="preview-label">
+                    Fitness
+                  </div>
+
+                  <div class="preview-title">
+                    Train Hard
+                  </div>
+
+                  <div class="preview-line"></div>
+                  <div class="preview-line small"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+                <h3>Train Hard Live Strong</h3>
+                <span class="project-number">04</span>
+              </div>
+
+              <p>
+                A modern fitness landing page focused on motivation,
+                strong visual structure and mobile responsiveness.
+              </p>
+
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">UI</span>
+              </div>
+
+              <a
+                href="https://trainhardlivestrong.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                View Live Website <span>→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 05 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-preview">
+
+              <div class="browser">
+
+                <div class="browser-top">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-address"></span>
+                </div>
+
+                <div class="preview-body">
+
+                  <div class="preview-label">
+                    Strength
+                  </div>
+
+                  <div class="preview-title">
+                    Build Your Strength
+                  </div>
+
+                  <div class="preview-line"></div>
+                  <div class="preview-line small"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+                <h3>Build Your Strength</h3>
+                <span class="project-number">05</span>
+              </div>
+
+              <p>
+                A strength and fitness themed website built around
+                clean content sections and strong visual hierarchy.
+              </p>
+
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+
+              <a
+                href="https://builtyourstrenght.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                View Live Website <span>→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 06 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-preview">
+
+              <div class="browser">
+
+                <div class="browser-top">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-address"></span>
+                </div>
+
+                <div class="preview-body">
+
+                  <div class="preview-label">
+                    Restaurant
+                  </div>
+
+                  <div class="preview-title">
+                    Spice Sizzle
+                  </div>
+
+                  <div class="preview-line"></div>
+                  <div class="preview-line small"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <div class="project-top">
+                <h3>Spice Sizzle</h3>
+                <span class="project-number">06</span>
+              </div>
+
+              <p>
+                A modern restaurant website focused on appetizing
+                presentation, clean sections and responsive design.
+              </p>
+
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Restaurant UI</span>
+              </div>
+
+              <a
+                href="https://spicesizzle.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                View Live Website <span>→</span>
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+            <div class="eyebrow">What I Do</div>
+            <h2>Built for the modern web.</h2>
+          </div>
+
+          <p>
+            My focus is creating websites that look professional,
+            work smoothly and remain responsive across different devices.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service reveal">
+
+            <div class="service-icon">
+              &lt;/&gt;
+            </div>
+
+            <h3>Front-End Development</h3>
+
+            <p>
+              Building structured and interactive web experiences
+              using HTML, CSS and JavaScript.
+            </p>
+
+          </div>
+
+
+          <div class="service reveal">
+
+            <div class="service-icon">
+              ◈
+            </div>
+
+            <h3>Responsive Design</h3>
+
+            <p>
+              Creating layouts that adapt smoothly across desktops,
+              tablets and mobile devices.
+            </p>
+
+          </div>
+
+
+          <div class="service reveal">
+
+            <div class="service-icon">
+              ✦
+            </div>
+
+            <h3>Modern UI</h3>
+
+            <p>
+              Designing clean interfaces with strong typography,
+              spacing, visual hierarchy and polished details.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="reveal">
+
+            <div class="eyebrow">About Me</div>
+
+            <h2 class="about-title">
+              Turning ideas into clean web experiences.
+            </h2>
+
+          </div>
+
+
+          <div class="reveal">
+
+            <p class="about-text">
+              I'm Muhammad Talha Affaq, a Front-End Web Developer
+              focused on building modern and responsive websites.
+              I enjoy turning ideas into structured interfaces that
+              feel clear, professional and easy to use.
+            </p>
+
+            <p class="about-text">
+              My current technology stack includes HTML5, CSS3,
+              JavaScript and basic Python, with a strong interest in
+              responsive web design and modern user interfaces.
+            </p>
+
+            <p class="about-text">
+              I'm currently looking for opportunities where I can
+              continue improving my development skills while
+              contributing to real-world web projects.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+            <div class="eyebrow">Skills</div>
+            <h2>Languages & Technologies</h2>
+          </div>
+
+          <p>
+            A growing technical toolkit focused on front-end
+            development and responsive web experiences.
+          </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+          <div class="skill-box reveal">
+
+            <h3>Languages & Technologies</h3>
+
+            <div class="skill-list">
+              <span class="skill">HTML5</span>
+              <span class="skill">CSS3</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Python</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-box reveal">
+
+            <h3>Development Focus</h3>
+
+            <div class="skill-list">
+              <span class="skill">Responsive Design</span>
+              <span class="skill">Modern UI</span>
+              <span class="skill">Layout Design</span>
+              <span class="skill">User Focus</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-box reveal">
+
+            <h3>Workflow</h3>
+
+            <div class="skill-list">
+              <span class="skill">VS Code</span>
+              <span class="skill">GitHub</span>
+              <span class="skill">Netlify</span>
+              <span class="skill">Live Preview</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box reveal">
+
+          <div class="eyebrow">Let's Connect</div>
+
+          <h2>
+            Have an opportunity in mind?
+          </h2>
+
+          <p>
+            I'm open to web development opportunities, collaborations
+            and projects where I can contribute my front-end skills.
+            Feel free to connect with me through email or social platforms.
+          </p>
+
+
+          <div class="contact-actions">
+
+            <!-- EMAIL -->
+
+            <a
+              href="mailto:talhaaffaq8@gmail.com"
+              class="social-btn"
+            >
+              <span class="social-icon">✉</span>
+              Email Me
+            </a>
+
+
+            <!-- LINKEDIN -->
+
+            <a
+              href="https://www.linkedin.com/in/talha-affaq7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+            >
+              <span class="social-icon">in</span>
+              LinkedIn
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+              href="https://www.instagram.com/pixel_plate.studio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+            >
+              <span class="social-icon">◎</span>
+              Instagram
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div class="footer-copy">
+          © 2026 Muhammad Talha Affaq. All rights reserved.
+        </div>
+
+        <div class="footer-links">
+
+          <a
+            href="https://www.linkedin.com/in/talha-affaq7/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="https://www.instagram.com/pixel_plate.studio/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+
+          <a href="mailto:talhaaffaq8@gmail.com">
+            Email
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       BACK TO TOP
+       LEFT SIDE
+  ========================= -->
+
+  <button
+    class="back-top"
+    id="backTop"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+
+  <script>
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+
+    /* Close mobile menu after clicking */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+
+    });
+
+
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 500) {
+        backTop.classList.add("show");
+      } else {
+        backTop.classList.remove("show");
+      }
+
+    });
+
+    backTop.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================= */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+  </script>
+
+</body>
